@@ -9,7 +9,7 @@ public class CollectableBase : MonoBehaviour
     public ParticleSystem particleSystem;
     //deletar o new depois
     public GameObject graphicItem;
-    public float timeToHide = 3f;
+    public float timeToHide = 0f;
 
     [Header("Sounds")]
     public AudioSource audioSource;
@@ -29,7 +29,7 @@ public class CollectableBase : MonoBehaviour
 
     private void HideObject()
     {
-        gameObject.SetActive(false);
+        graphicItem.SetActive(false);
     }
 
 
