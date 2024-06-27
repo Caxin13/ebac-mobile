@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollectableBase : MonoBehaviour
 {
 
-    public string compareTag = "Player";
+    public string compareTag = "CoinCollector";
     public ParticleSystem particleSystem;
     //deletar o new depois
     public GameObject graphicItem;

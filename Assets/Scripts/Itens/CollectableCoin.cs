@@ -18,16 +18,16 @@ public class CollectableCoin : CollectableBase
 
     protected override void OnCollect()
     {
-        base.Collect();
+        base.OnCollect();
         collider.enabled = false;
         collect = true;
        // PlayerController.Instance.Bounce();
     }
 
-    protected override void Collect()
+     protected override void Collect()
     {
-        OnCollect();
-    }
+        base.Collect();
+    } 
 
     private void Update()
     {
@@ -39,9 +39,10 @@ public class CollectableCoin : CollectableBase
             {
                 graphicItem.SetActive(false);
                 Destroy(gameObject);
+               
             }
         }
     }
-
+            
 
 }
