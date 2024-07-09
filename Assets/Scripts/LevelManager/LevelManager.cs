@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     private GameObject _currentLevel;
 
     private List<LevelPieceBase> _spawnedPieces;
+    private LevelPieceBasedSetup _currentSetup;
 
     private void Awake()
     {
@@ -60,22 +61,34 @@ public class LevelManager : MonoBehaviour
     private void CreateLevelPieces()
     {
         _spawnedPieces = new List<LevelPieceBase>();
-        for(int i = 0; i < piecesStartNumber; i++)
+
+        if(_currentSetup != null)
         {
-            CreateLevelPiece(levelPiecesStart);
+            _index++;
+
+            if (_index >= levelPieceBasedSetups.Count)
+            {
+                ResetLevelIndex();
+            }
         }
 
-        _spawnedPieces = new List<LevelPieceBase>();
-        for (int i = 0; i < piecesNumber; i++)
+        _currentSetup = levelPieceBasedSetups[_index];
+         
+        for (int i = 0; i < _currentSetup.piecesStartNumber; i++)
         {
-            CreateLevelPiece(levelPieces);
+            CreateLevelPiece(_currentSetup.levelPiecesStart);
         }
 
-        _spawnedPieces = new List<LevelPieceBase>();
-        for (int i = 0; i < piecesEndNumber; i++)
+        for (int i = 0; i < _currentSetup.piecesNumber; i++)
         {
-            CreateLevelPiece(levelPiecesEnd);
+            CreateLevelPiece(_currentSetup.levelPieces);
         }
+
+        for (int i = 0; i < _currentSetup.piecesEndNumber; i++)
+        {
+            CreateLevelPiece(_currentSetup.levelPiecesEnd);
+        }
+
     }
 
 
@@ -90,6 +103,10 @@ public class LevelManager : MonoBehaviour
 
             spawnedPiece.transform.position = lastPiece.endPiece.position;
         }
+        else
+        {
+            spawnedPiece.transform.localPosition = Vector3.zero;
+        }
 
         _spawnedPieces.Add(spawnedPiece);
     }
@@ -102,18 +119,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    /*
+    
     IEnumerator CreateLevelPiecesCoroutine()
     {
         _spawnedPieces = new List<LevelPieceBase>();
-        for (int i = 0; i < piecesNumber; i++)
+        for (int i = 0; i < _currentSetup.piecesNumber; i++)
         {
-            CreateLevelPiece();
+            CreateLevelPiece(_currentSetup.levelPieces);
             yield return new WaitForSeconds(timeBetweenPieces);
         }
 
     }
-    */
+    
 
     #endregion
 
