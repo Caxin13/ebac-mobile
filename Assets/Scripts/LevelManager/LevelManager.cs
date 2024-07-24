@@ -24,8 +24,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int _index;
     private GameObject _currentLevel;
 
-    private List<LevelPieceBase> _spawnedPieces;
+    private List<LevelPieceBase> _spawnedPieces = new List<LevelPieceBase>();
     private LevelPieceBasedSetup _currentSetup;
+
+
 
     private void Awake()
     {
@@ -60,9 +62,11 @@ public class LevelManager : MonoBehaviour
 
     private void CreateLevelPieces()
     {
-        _spawnedPieces = new List<LevelPieceBase>();
 
-        if(_currentSetup != null)
+        CleanSpawnedPieces();
+
+
+        if (_currentSetup != null)
         {
             _index++;
 
@@ -108,15 +112,22 @@ public class LevelManager : MonoBehaviour
             spawnedPiece.transform.localPosition = Vector3.zero;
         }
 
+        foreach(var p in spawnedPiece.GetComponentInChildren<ArtPiece>())
+        {
+            p.ChangePiece(ArtManager.Instance.getSetupByType(_currentSetup.artType).gameObject);
+        }
+
         _spawnedPieces.Add(spawnedPiece);
     }
 
     private void CleanSpawnedPieces()
     {
-        for(int i = 0; i < _spawnedPieces.Count; i++)
+        for(int i = _spawnedPieces.Count - 1; i >=0; i--)
         {
-
+            Destroy(_spawnedPieces[i].gameObject);
         }
+
+        _spawnedPieces.Clear();
     }
 
     
@@ -138,7 +149,7 @@ public class LevelManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.D))
         {
-            SpawnNextLevel();
+            CreateLevelPieces();
         }
 
     }

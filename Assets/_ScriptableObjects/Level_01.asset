@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e1875cb2c7d084b900d8fc2fdd0706, type: 3}
   m_Name: Level_01
   m_EditorClassIdentifier: 
-  levelPiecesStart: []
+  levelPiecesStart:
+  - {fileID: 3393767323436652443, guid: 81604e3000b206944934c06d3e608397, type: 3}
   levelPieces:
-  - {fileID: 0}
-  - {fileID: 0}
-  levelPiecesEnd: []
-  piecesNumber: 5
-  piecesStartNumber: 3
+  - {fileID: 5034515426693660049, guid: 74f3ce4cde1f3c944899375638b73031, type: 3}
+  - {fileID: 3393767323436652443, guid: 753917d36b85a814281d40b4190e1938, type: 3}
+  - {fileID: 3393767323436652443, guid: af3d61f5ea9082f4986fd6324dc34a3e, type: 3}
+  - {fileID: 3393767323436652443, guid: 605b12855ce6b2042914c558a35a99bb, type: 3}
+  - {fileID: 3393767323436652443, guid: e9365a26fe528634d83be00597bef1b4, type: 3}
+  - {fileID: 3393767323436652443, guid: a750a7b55ff447045a64977a694e6098, type: 3}
+  levelPiecesEnd:
+  - {fileID: 1430691964364269783, guid: 2e192e20da940db45a82356a474dc079, type: 3}
+  piecesNumber: 8
+  piecesStartNumber: 1
   piecesEndNumber: 1
