@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
 
 
-    private void Awake()
+    private void Start()
     {
        // SpawnNextLevel();
         CreateLevelPieces();
@@ -114,7 +114,7 @@ public class LevelManager : MonoBehaviour
 
         foreach(var p in spawnedPiece.GetComponentsInChildren<ArtPiece>())
         {
-            p.ChangePiece(ArtManager.Instance.GetSetupByType(_currentSetup.artType).gameObject);
+       //     p.ChangePiece(ArtManager.Instance.GetSetupByType(_currentSetup.artType).gameObject);
         }
 
         _spawnedPieces.Add(spawnedPiece);
