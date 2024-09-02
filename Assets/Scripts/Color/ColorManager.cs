@@ -8,7 +8,7 @@ public class ColorManager : Singleton<ColorManager>
     public List<Material> materials;
     public List<ColorSetup> colorSetups;
 
-    private void ChangeColorByType(ArtManager.ArtType artType)
+    public void ChangeColorByType(ArtManager.ArtType artType)
     {
         var setup = colorSetups.Find(i => i.artType == artType);
 
