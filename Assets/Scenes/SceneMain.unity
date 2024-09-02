@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 057d9562b24d48b46b1eec9096c6a827, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.31762668, g: 0.46337813, b: 0.60351557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1074,6 +1074,70 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857869127}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &886090476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886090478}
+  - component: {fileID: 886090477}
+  m_Layer: 0
+  m_Name: ColorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &886090477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886090476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b00cb51b8d76d4089421463510c790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 4b0117992f2088d46a310386fd2539ff, type: 2}
+  - {fileID: 2100000, guid: b260923447d05df44b112b04378f8ad6, type: 2}
+  colorSetups:
+  - artType: 0
+    colors:
+    - {r: 1, g: 0.695729, b: 0.07075471, a: 0}
+    - {r: 0.8962264, g: 0.36831042, b: 0.080322154, a: 0}
+  - artType: 1
+    colors:
+    - {r: 0.03844783, g: 0.3752344, b: 0.9056604, a: 0}
+    - {r: 0.58803046, g: 0.039215665, b: 0.90588236, a: 0}
+  - artType: 2
+    colors:
+    - {r: 1, g: 0.4575472, b: 0.893807, a: 0}
+    - {r: 0.90588236, g: 0.039215665, b: 0.35571826, a: 0}
+  - artType: 3
+    colors:
+    - {r: 0.039215665, g: 0.90588236, b: 0.08897018, a: 0}
+    - {r: 0.039215665, g: 0.90588236, b: 0.796781, a: 0}
+--- !u!4 &886090478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886090476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.375708, y: -1.8899999, z: 15.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &929709179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,6 +1626,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4cefd55fc9cbce4599e897d32539727, type: 2}
   timeBetweenPieces: 0.3
   _index: 0
+  _spawnedPieces: []
 --- !u!4 &1128853300
 Transform:
   m_ObjectHideFlags: 0
@@ -1776,7 +1841,11 @@ MonoBehaviour:
   artSetups:
   - artType: 0
     gameObject: {fileID: 2734236108370593187, guid: 5ebd276e1de5df4459320e159ed526dd, type: 3}
-  - artType: 0
+  - artType: 1
+    gameObject: {fileID: 8499580148427385165, guid: 819a74eebecdcd847adc44389da54fb9, type: 3}
+  - artType: 2
+    gameObject: {fileID: 8499580148427385165, guid: 819a74eebecdcd847adc44389da54fb9, type: 3}
+  - artType: 3
     gameObject: {fileID: 8499580148427385165, guid: 819a74eebecdcd847adc44389da54fb9, type: 3}
 --- !u!4 &1349687212
 Transform:
@@ -2649,6 +2718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArtPiece_Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 3088999275322852299, guid: 5ebd276e1de5df4459320e159ed526dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6080996055482656680, guid: 5ebd276e1de5df4459320e159ed526dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.437817
@@ -2775,5 +2848,6 @@ SceneRoots:
   - {fileID: 1058787362}
   - {fileID: 1128853300}
   - {fileID: 1349687212}
+  - {fileID: 886090478}
   - {fileID: 2138227903993397009}
   - {fileID: 3762460791553996784}
