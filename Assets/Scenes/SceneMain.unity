@@ -1009,7 +1009,7 @@ Transform:
   m_GameObject: {fileID: 847181090}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7618198, y: -1.5559547, z: -0.43945622}
+  m_LocalPosition: {x: 0, y: -1.5559547, z: -0.43945622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1375,7 +1375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2022797, y: -0.0954445, z: 0.019812409, w: 0.97446436}
+  m_LocalRotation: {x: 0.2022797, y: -0.09544452, z: 0.01981241, w: 0.97446436}
   m_LocalPosition: {x: 1.61, y: 2.6, z: -8.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1767,7 +1767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145739014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2022797, y: -0.0954445, z: 0.019812409, w: 0.97446436}
+  m_LocalRotation: {x: 0.2022797, y: -0.09544452, z: 0.01981241, w: 0.97446436}
   m_LocalPosition: {x: 1.61, y: 2.6, z: -8.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2203,6 +2203,8 @@ MonoBehaviour:
   uiTextPowerUp: {fileID: 390973902}
   animatorManager: {fileID: 987954112}
   VfxDeath: {fileID: 1022223710}
+  limit: 4
+  limitVector: {x: -5, y: 5}
   _bounceHelper: {fileID: 1945189541}
 --- !u!114 &1945189541
 MonoBehaviour:

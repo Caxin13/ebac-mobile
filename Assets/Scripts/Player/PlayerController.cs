@@ -70,7 +70,7 @@ public class PlayerController : Singleton<PlayerController>
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
 
-        if (_pos.x < limitVector.x) _pos.x = -limitVector.x;
+        if (_pos.x < limitVector.x) _pos.x = limitVector.x;
         else if (_pos.x > limitVector.y) _pos.x = limitVector.y;
      
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
